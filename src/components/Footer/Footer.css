@@ -1,12 +1,15 @@
 .footer{
     position: absolute;
-    background: #1b1b1bab;
+    background: black;
     padding: 20px;
+    color: white;
     left: 0px;
     right: 0px;
     text-align: center;
+    border-top: 3px solid orange;
+    box-shadow: -1px -1px 10px 5px orange;
     box-sizing: border-box;
-    transition: 0.2s;
+    transition: 0.5s;
 }
 
 .footer p {
@@ -20,6 +23,8 @@
 }
 
 .light .footer{
-    background: #000;
-    color: white;
+    background: white;
+    border-top: 5px solid skyblue;
+    box-shadow: -1px -1px 10px 5px skyblue;
+    color: black;
 }

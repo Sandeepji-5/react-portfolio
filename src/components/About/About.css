@@ -10,8 +10,8 @@
     border-radius: 50px;
     box-shadow: 0px 0px 20px 10px orange;
     height: fit-content;
+    overflow: hidden;
 }
-
 
 .light .aboutContainer{   
     background-image: url('../../assets/light_sea.jpg');
@@ -19,27 +19,18 @@
     box-shadow: 0px 0px 20px 10px skyblue;
 }
 
-.aboutContainer h1{
-    margin-top: 10px;
-    margin-bottom: 40px;
+.aboutContainer>h1{
+    font-size: 40px;
+    margin: 10px 10px 40px 10px;
     padding: 10px;
     color: white;
     border-radius: 10px;
     font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
     box-shadow: 3px 3px 5px 2px orange;
 }
-
-.light .aboutContainer h1{
-    color: black;
-    box-shadow: 0px 0px 10px 10px skyblue;
-}
-
-#abtMe{
-    color: orange;
-}
-
-.light #abtMe{
-    color: skyblue;
+  
+.light .aboutContainer>h1{
+    box-shadow: 3px 3px 8px 8px skyblue;
 }
 
 .profile{
@@ -90,9 +81,9 @@
     text-align: center;
     font-family: cursive;
     font-size: 1em;
-    width: 700px;
     margin: 10px 40px 20px 40px;
     text-wrap: wrap;
+    color: white;
 }
 
 #knowMore{
@@ -119,5 +110,21 @@
 }
 
 .light #knowMore:hover{
+    background-color: skyblue;
     box-shadow: 2px 2px 3px 1px skyblue ;
+}
+
+@media (max-width:700px){
+    .aboutContainer > h1{
+        font-size: 28px;
+    }
+    .aboutContainer p{
+        font-size: 0.7em;
+    }
+    .aboutContainer img{
+        width: 120px;
+    }
+    .aboutContainer h2{
+        font-size: 16px;
+    }
 }

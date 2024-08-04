@@ -1,10 +1,6 @@
 import React from 'react'
 import './Home.css'
 import profile from '../../assets/profile.png';
-// import profile from '../../assets/profile_ai.png';
-// import profile from '../../assets/profile_black.jpg';
-// import profile from '../../assets/profile_white.jpg';
-
 
 const Home = () => {
   return (

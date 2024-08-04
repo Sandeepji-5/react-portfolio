@@ -47,7 +47,7 @@ const Contact = () => {
     <div id='contact' className='contactMe componentStyle'>
       <div className='blurBg'></div>
       <div className='contDetail'>
-        <h1>Contact <span id='spanContactMe'>Me</span></h1>
+        <h1 className='secTitle'>Contact <span id='spanTitle'>Me</span></h1>
         <h3>Get in touch with me !</h3>
 
         <div className='contactForm'>

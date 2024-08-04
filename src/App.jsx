@@ -11,19 +11,20 @@ import { useEffect, useState } from 'react'
 
 function App() {
   
-  // fetching the theme from local storage 
+  // fetching the theme from local storage
   const currentTheme = localStorage.getItem('currentTheme');
 
-  // changing bg color of the root element.
+// **********changing bg color of the root element**********
   const rootTheme = document.querySelector('#root');
   // if stored theme is dark then display black root.
   if(currentTheme == 'dark'){
     rootTheme.style.backgroundColor = "black";
   }
   
+// **********Responsible for theme of entire app**********
   const [theme, setTheme] = useState(currentTheme ? currentTheme : 'dark');
-  console.log(theme);
-  // if after toggling theme is dark then make root white else make root dark.
+  
+  // if after toggling theme is dark then make root black else make root white.
   theme == 'light' ? rootTheme.style.backgroundColor = "white" : rootTheme.style.backgroundColor = "black";
 
   // storing value in local storage
@@ -32,32 +33,34 @@ function App() {
   },[theme]);
   
   return (
-    <div className='mainContainer'>
-      <div id='home' className={`container navBar ${theme}`}>
-        <Navbar theme={theme} setTheme={setTheme} rootTheme={rootTheme}/>          
+    <>
+      <div className={`nav ${theme}`}>
+        <Navbar theme={theme} setTheme={setTheme}/>          
       </div>
-      <div id='components' className={`home container ${theme}`}>
+      <div className={`home container ${theme}`}>
         <Home/>
       </div>
-      <div id='components' className={`container ${theme}`}>
-        <About/>
+      <div className={`container ${theme}`}>
+        <div className="components">
+          <About/>
+        </div>
+        <div className="components">
+          <Education/>
+        </div>
+        <div className="components">
+          <Project/>
+        </div>
+        <div className="components">
+          <Skills/>
+        </div>
+        <div className="components">
+          <Contact/>
+        </div>
       </div>
-      <div id='components' className={`container ${theme}`}>
-        <Education/>
-      </div>
-      <div id='components' className={`container ${theme}`}>
-        <Project/>
-      </div>
-      <div id='components' className={`container ${theme}`}>
-        <Skills/>
-      </div>
-      <div id='components' className={`container ${theme}`}>
-        <Contact/>
-      </div>
-      <div id='footer' className={`container ${theme}`}>
+      <div className={`container ${theme}`}>
         <Footer/>
       </div>
-    </div>
+    </>
   )
 }
 

@@ -1,4 +1,4 @@
-nav{
+/* .navBar{
     display: flex;
     flex-wrap: wrap;
     align-items: center;
@@ -7,49 +7,69 @@ nav{
     top: 0px;
     left: 20px;
     z-index: 999;
-    margin: 15px 5px;
-    width: 95%;
-    padding: 15px 5%;
-    height: fit-content;
-    background-color: #0000008c;
-    border-radius: 30px;
-    box-shadow: 0px 0px 20px 8px orange;
-}
-  
-/* @keyframes logo {
-  from {
-    transform: rotate(0deg);
-  }
-  to {
-    transform: rotate(360deg);
-  }
 } */
 
+/* Here - Default HTML size - 16px = 1rem*/
+/* 6.25rem = 100px */
+/* 3.125rem = 50px */
+
+.navBar{
+  width: 100%;
+  height: 6.25rem;
+  display: grid;
+  grid-template-columns: 2rem 1fr 3fr 1fr 2rem;
+  margin-bottom: 20px;
+  box-shadow: 0px 3px 8px 2px orange;
+  background-color: #0000008c;
+  
+}
+.light .navBar{
+  background: #cbcbcb84;
+  box-shadow: 0px 2px 5px 2px skyblue;
+}
+  
+/* Setting Logo Part */
 .logo {
-  width: fit-content;
+  display: grid;
+  grid-column: 2/3;
+  justify-content: center;
+  align-items: center;
+}
+.logo>img{
   height: 45px;
-  color: white;
   background-color: #000000;
-  padding: 0px;
   border-radius: 20px;
   box-shadow: 0px 0px 10px 1px rgba(255, 166, 0, 0.931);
   will-change: filter;
   transition: filter,transform 300ms;
 }
-.logo:hover {
+.logo>img:hover {
   filter: drop-shadow(0 0 12px orange);
   transform: scale(1.2);
 }
-
-nav ul{
-    list-style: none;
-    flex: 1;
-    text-align: center;
+.light .logo>img{
+  background: rgba(255, 255, 255, 0.76);
+  box-shadow: 0px 0px 10px 1px black;
+}
+.light .logo>img:hover{
+  box-shadow: 0px 0px 10px 1px skyblue;
+  filter: drop-shadow(0px 0px 5px skyblue);
 }
 
-nav > ul li{
-  display: inline-block;
-  margin-right: 15px;
+/* Setting Up Menu Part of navbar */
+
+.menuLinks{
+  display: grid;
+  grid-column: 3/4;
+}
+.menuLinks ul{
+  height: 6.25rem;
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+}
+.menuLinks ul > li{
+  list-style: none;
   font-size: large;
   padding: 8px;
   border-radius: 10px;
@@ -58,110 +78,288 @@ nav > ul li{
   transition-timing-function: ease;
   transition-delay: 0.1s;
 }
-
-nav li:hover{
+.menuLinks a{
+  text-transform: capitalize;
+}
+.menuLinks li:hover{
     transform: translateY(-6px);
     box-shadow: 3px 3px 4px  orange;
 }
-
-.light nav li:hover{
+.light .menuLinks li:hover{
     box-shadow: 3px 3px 4px  skyblue;
+} */
+
+
+/* Handling Buttons of Navbar */
+.navButtons{
+  grid: 4/5;
+}
+.navButtons ul{
+  height: 6.25rem;
+  display: grid;
+  grid-template-columns: 1fr 1fr 2fr;
+  align-items: center;
+}
+.navButtons ul>li:first-child{
+  grid-column: 2/3;
+}
+.navButtons ul>li{
+  list-style: none;
+}
+.light #navBtn{
+  color: black;
+  border: 1px solid skyblue;
+  box-shadow: 0px 0px 4px 2px skyblue;
+  transition: ease-in-out 0.3s;
+}
+.light #navBtn:hover{
+  color: white;
+  transition: ease-in-out 0.3s; 
+  background-color: black;
+  box-shadow: none;
 }
 
-/* **************Light Mode************** */
-.toggleLight{
-  border-radius: 50%;
-  background-color: white;
-}
-.lightModeBtn{
-  margin-right: 25px;
-  padding: 1px;
-  width: 29px;
-  height: 29px;
-  border-radius: 50%;
-  background-color: black;
-}
-button.lightModeBtn:hover{
-  filter: invert(100%);
-  /* This animation line applies the rotation animation. */
-  /* animation: logo infinite 5s linear; */
+
+/* Rotation Animation */
+@keyframes logo {
+  from {
+    transform: rotate(0deg);
+  }
+  to {
+    transform: rotate(180deg);
+  }
 }
 
 /* **************Dark Mode************** */
-.toggleDark{
-  filter: invert(100%);
-  border-radius: 50%;
-  background-color: white;
-}
 .darkModeBtn{
   margin-right: 25px;
   padding: 1px;
   width: 29px;
   height: 29px;
   border-radius: 50%;
-  background-color: white;
+  box-shadow: 0px 0px 5px 2px orange;
+  border: 1px solid orange;
+  transition: ease-in-out 0.6s;
 }
-button.darkModeBtn:hover{
-  filter: invert(100%);
-  /* This animation line applies the rotation animation. */
-  /* animation: logo infinite 5s linear; */
-}
-
-button.contactBtn:hover{
+.darkModeBtn:hover{
+  box-shadow: none;
+  border: none;
   filter: none;
-  transform: scale(1.1);
-  background-color: orange;
-  box-shadow: 0px 0px 5px 2px white;
+  color: black;
+  background: white;
+  transition: 0.6s;
+}
+
+.darkModeBtn:active{
+  /* This animation line applies the rotation animation. */
+  animation: logo alternate 0.1s linear;
+}
+
+/* **************Light Mode************** */
+.lightModeBtn{
+  margin-right: 25px;
+  padding: 1px;
+  width: 29px;
+  height: 29px;
+  border-radius: 50%;
+  transition: 2s;
+}
+.lightModeBtn:hover{
+  box-shadow: none;
+  filter: none;
+}
+.lightModeBtn:active{
+  /* This animation line applies the rotation animation. */
+  animation: logo alternate 0.1s linear;
+}
+
+/* Contact Button Design */
+.contactBtn{
+  background-color: transparent;
+  border: 1px solid orange;
+  box-shadow: 0px 0px 5px 2px orange;
+  transition: 0.5s;
+}
+.light .contactBtn{
   color: #000000;
+  background: transparent;
+  border: 1px solid skyblue;
+  box-shadow: 0px 0px 4px 2px  skyblue;
+  transition: 0.5s;
 }
 
-#navBtn:focus,
-#navBtn:focus-visible {
-  outline: 2px auto -webkit-focus-ring-color;
-} 
-
-#navBtn > a:hover{
-  color: black;
+.contactBtn:hover{
+  filter: none;
+  transform: scale(1.2);
+  background-color: orange;
+  box-shadow: 0px 0px 4px 1px orange;
+  color: #000000;
+  transition: 0.5s;
 }
 
-.light nav{
-  background: #0000001c;
-  border-radius: 30px;
-  box-shadow: 0px 0px 10px 8px skyblue;
-}
-
-.light .logo{
-  background: rgba(255, 255, 255, 0.76);
-  box-shadow: 0px 0px 10px 1px black;
-}
-.light .logo:hover{
-  box-shadow: 0px 0px 10px 1px skyblue;
-  filter: drop-shadow(0px 0px 5px skyblue);
-}
-
-.light #navBtn{
-  background: rgba(255, 255, 255, 0.76);
-  color: black;
-  box-shadow: 0px 0px 10px 1px black;
-  transition: ease-in-out 0.3s;
-}
-
-.light #navBtn:hover{
-  transition: ease-in-out 0.3s;
+.light .contactBtn:hover{
+  transform: scale(1.2);
   background-color: skyblue;
-  box-shadow: 0px 0px 15px black;
-  border: 1px solid black ;
+  box-shadow: 0px 0px 4px  black;
+  transition: ease-in-out 0.5s;
 }
 
+/* #navBtn:focus,
+#navBtn:focus-visible {
+  outline: 1px auto -webkit-focus-ring-color;
+}  */
 
-@media (min-width:650px) and (max-width:900px){
-  nav{
-    width: 93vw;
+
+.hamburgerMenu{
+  display: none
+}
+
+/* responsive css style  */
+@media (max-width: 1080px) {
+  .menuLinks {
+    height: 5rem;
+    grid-template-columns: 2rem 2fr 3fr 1fr 2rem;
+  }
+
+  .logo,
+  .menuLinks ul,
+  .navButtons ul {
+    height: 5rem;
   }
 }
 
-@media (max-width:650px){
-  nav{
-    width: 90vw;
+/* responsive css style  */
+@media (max-width: 998px) {
+  .navBar {
+    height: 4.375rem;
+    grid-template-columns: 1rem 2fr 4fr 2fr 1rem;
+  }
+
+  .menuLinks {
+    display: none;
+  }
+
+  .logo,
+  .navButtons ul {
+    height: 4.375rem;
+  }
+
+  .mobileMenuLinks {
+    display: grid;
+    grid-column: 2/4;
+    position: relative;
+    z-index: 99;
+  }
+
+  .mobileMenuLinks {
+    background-color: white;
+    height: 20rem;
+    display: grid;
+    grid-column: 2/5;
+    align-items: center;
+    padding-left: 3rem;
+    transition: all 2s linear;
+    transform-origin: top;
+    box-shadow: rgba(50, 50, 93, 0.25) 0px 50px 100px -20px,
+      rgba(0, 0, 0, 0.3) 0px 30px 60px -30px;
+  }
+
+  .mobileMenuLinks ul {
+    height: 20rem;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-around;
+    flex-direction: column;
+    align-items: center;
+  }
+
+  .mobileMenuLinks ul li:first-child {
+    transition-delay: 0.2s;
+  }
+
+  .navButtons {
+    grid-row: 1/2;
+    grid-column: 3/5;
+    justify-items: end;
+    align-items: center;
+    transition: all 2s linear;
+  }
+
+  .navBtnDesktop {
+    height: 0;
+    display: none;
+  }
+
+  .navButtons {
+    height: 4.375rem;
+    display: flex;
+    justify-self: end;
+    align-items: center;
+  }
+
+  .hamburgerMenu {
+    display: block;
+    font-size: 2.5rem;
+  }
+}
+
+@media (max-width: 798px) {
+  .navBar {
+    height: 3.75rem;
+    grid-template-columns: 1rem 2fr 2fr 1fr 1rem;
+  }
+
+  .logo,
+  .navButtons ul {
+    height: 3.75rem;
+  }
+
+  .mobileContactBtn{
+    display: none;
+  }
+
+  .navButtons {
+    height: 3.75rem;
+    display: flex;
+    justify-self: end;
+    align-items: center;
+  }
+
+  .navButtons .hamburgerMenu {
+    display: block;
+    font-size: 2.5rem;
+  }
+
+}
+
+@media (max-width: 520px) {
+  .menuLinks {
+    grid-template-columns: 1rem 4fr 1fr 1fr 1rem;
+  }
+
+  .logo,
+  .navButtons ul {
+    height: 3.75rem;
+  }
+
+  /* .logo h2 {
+    font-size: 2rem;
+  } */
+
+  .mobileMenuLinks {
+    /* transition: 0.5s; */
+    grid-column: 2/5;
+  }
+
+  .navButtons {
+    height: 3.5rem;
+    display: flex;
+    justify-self: end;
+    align-items: center;
+  }
+
+  .navButtons .hamburgerMenu {
+    display: block;
+    font-size: 2.5rem;
   }
 }

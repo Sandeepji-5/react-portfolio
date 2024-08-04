@@ -4,69 +4,63 @@
   background-color: black;
 }
 
-:root::after{
-  transition: 0s;
+.nav{
+
 }
 
+/* Container Class is for all the react components */
 .container{
+  display: inline-block;
   width: 100%;
-  padding: 30px 40px 20px 40px;
-  height: 100vh;
-  /* background-color: black; */
+  padding: 50px 40px 30px 40px;
+  height: 100%;
+  position: relative;
   background-image: url('./assets/dark_background.png');
   transition: 0.5s;
   scroll-behavior: smooth;
 }
 
 .container.light{
-  /* background: white; */
+  background: white;
   background-image: url('./assets/light_background.png');
-  color: black;
 }
 
+/* Proving backrgound look for dark theme in Home */
+.home{
+  position: relative;
+  background-image: url('./assets/stars_bg.jpg');
+  background-size: contain;
+}
+/* Proving backrgound look for light theme in Home */
+.home.light{ 
+  background-image: url('./assets/light_background.png');
+  background-size: contain;
+}
+
+/* this class is used to arrange indentation between components mentioned in App.jsx */
+.components{
+  margin-top: 50px;
+  margin-bottom: 100px;
+  width: 100%;
+}
+
+/* Design for all anchor tags of the app in light and Dark mode*/
+a{
+  font-weight: 500;
+  color: white;
+  text-decoration: none;
+}
 .light a{
   color: black;  
+}
+a:hover {
+  color: orange;
 }
 .light a:hover {
   color: skyblue;
 }
 
-#home{
-  height: fit-content;
-}
-
-.home{
-  background-image: url('./assets/stars_bg.jpg');
-  background-size: contain;
-}
-
-.home.light{
-  background-image: url('./assets/light_background.png');
-  background-size: cover;
-}
-
-
-#components{
-  width: 100%;
-  height: 100vh;
-  margin: 40px 0px 40px 0px;
-}
-
-#footer{
-  height: fit-content;
-  margin-top: 20px;
-}
-
-a{
-  font-weight: 500;
-  color: white;
-  text-decoration: inherit;
-}
-a:hover {
-  color: orange;
-}
-
-/* style of all books */
+/* style of all buttons of the app */
 button {
   border-radius: 8px;
   border: 1px solid transparent;
@@ -74,18 +68,45 @@ button {
   font-size: 1em;
   font-weight: 500;
   font-family: inherit;
-  background-color: black;
+  color: wheat;
+  background-color: transparent;
   border-radius: 20px;
   box-shadow: 0px 0px 10px 2px orange;
   cursor: pointer;
   will-change: filter;
   transition: border-color,filter,transform 200ms ease 0s;
 }
-
+.light button{
+  background: transparent;
+}
 button:hover {
   border-color: orange;
   filter: drop-shadow(0 0 8px orange);
   transform: scale(1.3);
+}
+
+/* for the title of each components of react */
+.secTitle{
+  width: fit-content;
+  font-size: 40px;
+  margin: 10px 10px 40px 10px;
+  padding: 10px;
+  color: white;
+  border-radius: 10px;
+  font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+  box-shadow: 3px 3px 5px 2px orange;
+}
+.light .secTitle{
+  color: black;
+  box-shadow: 3px 3px 8px 8px skyblue;
+}
+
+/* Spanning half part of title */
+#spanTitle{
+  color: orange;
+}
+.light #spanTitle{
+  color: skyblue;
 }
 
 
@@ -95,22 +116,6 @@ button:hover {
   flex-direction: column;
   box-sizing: border-box;
   align-items: center;
-  margin: 20;
+  margin: 20px;
   padding: 10px;
-  height: 100vh;
-}
-
-.componentStyle h1{
-  font-size: 40px;
-  margin: 10px 10px 40px 10px;
-  padding: 10px;
-  color: white;
-  border-radius: 10px;
-  font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
-  box-shadow: 3px 3px 5px 2px orange;
-}
-
-.light .componentStyle>h1{
-  color: black;
-  box-shadow: 3px 3px 8px 8px skyblue;
 }

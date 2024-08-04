@@ -1,104 +1,60 @@
-.education::-webkit-scrollbar{
-    display: none;
-}
-
-#journey{
-    color: orange;
-}
-
-.light #journey{
-    color: skyblue;
-}
-
-.eduTable{
-    display: flex;
-    gap: 70px;
+#education{
+    margin: 20px;
     padding: 0px 50px;
+    height: fit-content;
 }
 
-.edBlockAbout{
-    display: none;
+.eduListItem{
+    height: 250px;
+    backdrop-filter: blur(2px);
+}
+
+.aboutEdu{
+    display: flex;
     flex-direction: column;
-    align-items: center;
-    justify-content: center;
-    width: 100%;
-    height: 100%;
+    padding: 20px 20px;
+    color: white;
 }
 
+.aboutEdu > h3{
+    display: flex;
+    justify-content: center;
+    color: rgb(255, 189, 65);
+    font-size: 2.5em;
+    margin-top: 15px;
+    margin-bottom: 20px;
+}
 
-.edBlockAbout p, .edBlockAbout li{
+.light .aboutEdu > h3{
+    color: rgb(56, 93, 108);
+}
+
+.aboutEdu > h4{
+    display: flex;
+    justify-content: center;
+    color: rgb(255, 228, 177);
+    font-size: 1.3em;
+    margin-bottom: 30px;
+}
+
+.light .aboutEdu > h4{
+    color: rgb(99, 166, 193);
+}
+
+.aboutEdu > p{
+    display: flex;
+    justify-content: center;
+    color: rgb(255, 242, 218);
     margin-bottom: 10px;
+    /* font-size: 1.1em; */
 }
 
-.edBlockAbout p,li{
-    font-family: cursive;
+.light .aboutEdu > p{
+    color: rgb(119, 170, 190);
 }
 
-.eduTable h2{
-    margin-left: 5px;
-    text-align: start;
+.hoverLayer p{
+    margin-top: 15px;
 }
 
-.eduTable h3{
-    margin-bottom: 8px;
-    font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
-}
-
-.edBlock{
-    position: relative;
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    align-items: center;
-    text-align: center;
-    width: 300px;
-    border: 2px solid orange;
-    border-radius: 7px;
-    padding: 15px;
-    height: 350px;
-    overflow: scroll;
-    list-style: none;
-    margin: 15px;
-    box-shadow: 0px 0px 10px 1px orange;
-    transition: 0.8s;
-}
-
-.light .edBlock{
-    border: 2px solid skyblue;
-    box-shadow: 0px 0px 10px 1px skyblue;
-}
-
-.edBlock::-webkit-scrollbar{
-    display: none;
-}
-
-.edBlock:hover{
-    transition: 0.7s;
-    border: 2px solid white;
-    background-color: rgba(255, 166, 0, 0.774);
-    color: black;
-    cursor: pointer;
-    filter: drop-shadow(0px 0px 15px rgba(255, 166, 0, 0.899));
-    transform: translateY(-6px);
-    backdrop-filter: blur(10px);
-}
-
-.light .edBlock:hover{
-    background-color: skyblue;
-    filter: drop-shadow(0px 0px 15px skyblue);
-}
-
-.light .edBlockAbout  li:hover{
-    transform: translateY(0px);
-    box-shadow: 0px 0px 0px black;
-}
-
-.edBlock:hover h3{
-    display: none;
-}
-
-.edBlock:hover .edBlockAbout{
-    display: flex;
-    transition: 0.1s ease-in-out;
-    transform: scale(0.8);
-}
+/* code for the css functionality of the page is written in project.css as both are reflecting same designs. */
